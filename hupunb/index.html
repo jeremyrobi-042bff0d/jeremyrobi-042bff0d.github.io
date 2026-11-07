@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>虎扑nba-虎扑NBA专区讨论_虎扑NBA论坛社区热点</title>
+<meta name="description" content="虎扑nba专区聚合NBA赛事讨论、球员评价与社区热帖，围绕虎扑NBA论坛、虎扑NBA专区、虎扑NBA社区整理赛况看点、球队动态、话题榜单与球迷评论，帮助篮球爱好者快速找到值得追的讨论与资讯。">
+<meta name="keywords" content="虎扑nba,虎扑NBA论坛,虎扑NBA专区,虎扑NBA社区,虎扑NBA讨论">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1a2b'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23ff7a2f' stroke-width='4'/%3E%3Cpath d='M14 32h36M32 14v36' stroke='%23ff7a2f' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f4f6fa;
+  --card:#ffffff;
+  --ink:#152033;
+  --ink-2:#43506a;
+  --ink-3:#7a87a0;
+  --line:#e3e8f1;
+  --brand:#ff6a1f;
+  --brand-2:#e04e0a;
+  --brand-soft:#fff1e8;
+  --navy:#0f1a2b;
+  --navy-2:#1b2942;
+  --blue:#1f6feb;
+  --green:#14845a;
+  --radius:14px;
+  --shadow:0 2px 10px rgba(20,32,55,.06),0 10px 28px rgba(20,32,55,.05);
+  --shadow-hover:0 6px 16px rgba(20,32,55,.10),0 16px 36px rgba(20,32,55,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.sec{padding:38px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.sec-head h2{font-size:22px;letter-spacing:.3px;position:relative;padding-left:14px}
+.sec-head h2::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;border-radius:3px;background:linear-gradient(180deg,var(--brand),#ffb066)}
+.sec-head .sub{font-size:13px;color:var(--ink-3);max-width:560px}
+.sec-head .more{font-size:13px;color:var(--brand-2);font-weight:600;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#d8e0ee}
+.tag{display:inline-block;font-size:12px;line-height:1.6;padding:1px 8px;border-radius:999px;background:#f1f4f9;color:var(--ink-2);border:1px solid #e6ebf4}
+.tag.hot{background:var(--brand-soft);color:var(--brand-2);border-color:#ffdcc8}
+.tag.blue{background:#eaf2ff;color:#1557b8;border-color:#d7e5ff}
+.tag.green{background:#e8f7ef;color:#0f6b47;border-color:#d3efdf}
+
+/* 顶部导航 */
+.site-top{background:var(--navy);color:#e8eefb;position:sticky;top:0;z-index:60;border-bottom:1px solid #22304a}
+.top-inner{display:flex;align-items:center;gap:18px;height:62px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;letter-spacing:.5px;white-space:nowrap}
+.logo .mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(140deg,var(--brand),#ffb066);display:grid;place-items:center;color:#231000;font-size:15px;font-weight:900}
+.logo em{font-style:normal;color:#ffb066}
+.nav-main{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav-main::-webkit-scrollbar{display:none}
+.nav-main a{font-size:14px;color:#c3cfe4;padding:7px 11px;border-radius:9px;white-space:nowrap;transition:.16s}
+.nav-main a:hover{background:#1c2b46;color:#fff}
+.top-act{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:600;padding:8px 16px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:.16s;white-space:nowrap}
+.btn-main{background:linear-gradient(135deg,var(--brand),#ff8b4d);color:#241000;box-shadow:0 4px 12px rgba(255,106,31,.28)}
+.btn-main:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;border-color:#31415f;color:#d5dff0}
+.btn-ghost:hover{background:#1c2b46}
+
+/* Banner */
+.hero{background:radial-gradient(1200px 420px at 78% -10%,#2a3d61 0%,transparent 60%),linear-gradient(160deg,#101c30,#182741 68%,#1d2f4d);color:#eef3fc;padding:46px 0 42px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-90px;bottom:-120px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(255,176,102,.25)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:34px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:34px;line-height:1.28;letter-spacing:.5px;margin-bottom:14px}
+.hero h1 span{color:#ffb066}
+.hero p.lead{color:#b9c7de;font-size:15px;margin-bottom:6px;max-width:600px}
+.hero .searchbar{display:flex;gap:8px;margin:20px 0 16px;max-width:560px}
+.hero .searchbar input{flex:1;height:44px;border-radius:11px;border:1px solid #33456a;background:#0d182a;color:#eaf0fb;padding:0 14px;font-size:14px;outline:none}
+.hero .searchbar input::placeholder{color:#6d7d9b}
+.hero .searchbar .btn{height:44px;padding:0 20px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.hero-tags a{font-size:12.5px;color:#c9d6ea;border:1px solid #33456a;background:#152238;padding:5px 11px;border-radius:999px;transition:.16s}
+.hero-tags a:hover{border-color:#ffb066;color:#ffb066}
+.hero-side{display:grid;gap:10px}
+.hs-card{background:linear-gradient(150deg,#1d2c48,#16233a);border:1px solid #2b3c5c;border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:12px}
+.hs-card .idx{font-size:20px;font-weight:900;color:#ffb066;width:26px;text-align:center;font-family:Georgia,serif}
+.hs-card .txt{font-size:13.5px;color:#dbe5f5}
+.hs-card .txt small{display:block;color:#7f8fac;font-size:12px;margin-top:2px}
+
+/* 快捷分类 */
+.quick{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:-26px;position:relative;z-index:5}
+.quick a{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow);transition:.16s}
+.quick a:hover{transform:translateY(-3px);color:var(--brand-2);border-color:#ffdcc8}
+.quick a i{display:block;font-style:normal;font-size:18px;margin-bottom:4px}
+
+/* 简介 */
+.intro-card{padding:26px 28px;background:var(--card)}
+.intro-card h2{font-size:20px;margin-bottom:12px}
+.intro-card p{color:var(--ink-2);margin-bottom:12px;font-size:14.5px}
+.intro-points{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.intro-points div{background:#f7f9fd;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13px;color:var(--ink-2)}
+.intro-points b{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
+
+/* 推荐卡片 */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rc{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.rc .cover{height:118px;position:relative;display:flex;align-items:flex-end;padding:12px 14px;color:#fff}
+.rc .cover .big{font-size:17px;font-weight:800;letter-spacing:.4px;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.rc .cover .rate{position:absolute;top:10px;right:10px;background:rgba(8,16,30,.62);border:1px solid rgba(255,255,255,.22);color:#ffd9ba;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px}
+.rc .body{padding:13px 15px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.rc .body h3{font-size:15.5px}
+.rc .body p{font-size:13px;color:var(--ink-2);flex:1}
+.rc .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.rc .foot{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:8px}
+.c1{background:linear-gradient(135deg,#c2410c,#f59e0b)}
+.c2{background:linear-gradient(135deg,#1e3a8a,#2563eb)}
+.c3{background:linear-gradient(135deg,#065f46,#10b981)}
+.c4{background:linear-gradient(135deg,#6d28d9,#a855f7)}
+.c5{background:linear-gradient(135deg,#9f1239,#f43f5e)}
+.c6{background:linear-gradient(135deg,#0f172a,#334155)}
+.c7{background:linear-gradient(135deg,#155e75,#06b6d4)}
+.c8{background:linear-gradient(135deg,#78350f,#d97706)}
+.c9{background:linear-gradient(135deg,#3f1d5c,#8b5cf6)}
+.c10{background:linear-gradient(135deg,#134e4a,#0d9488)}
+.c11{background:linear-gradient(135deg,#7c2d12,#ea580c)}
+.c12{background:linear-gradient(135deg,#1e293b,#475569)}
+
+/* 最新更新列表 */
+.update-list{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.up-item{display:flex;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.up-item .dot{width:8px;height:8px;border-radius:50%;background:var(--brand);margin-top:8px;flex:none}
+.up-item .t{font-size:14px;font-weight:600}
+.up-item .d{font-size:12.5px;color:var(--ink-3);margin-top:2px}
+
+/* 分类索引 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-item{padding:16px 16px;display:flex;align-items:center;gap:12px}
+.cat-item .ic{width:38px;height:38px;border-radius:10px;background:var(--brand-soft);color:var(--brand-2);display:grid;place-items:center;font-size:16px;font-weight:800;flex:none}
+.cat-item b{font-size:14.5px;display:block}
+.cat-item span{font-size:12.5px;color:var(--ink-3)}
+
+/* 深度解析 */
+.article-box{padding:28px 30px}
+.article-box h2{font-size:21px;margin-bottom:14px}
+.article-box h3{font-size:16.5px;margin:22px 0 8px;color:var(--navy)}
+.article-box p{color:var(--ink-2);font-size:14.5px;margin-bottom:12px}
+.article-box .hl{color:var(--brand-2);font-weight:600}
+.quote{border-left:3px solid #ffd0b0;background:#fff8f3;padding:12px 16px;border-radius:0 10px 10px 0;color:#7a4a2a;font-size:14px;margin:16px 0}
+
+/* 数据面板 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{padding:18px;text-align:center}
+.stat .n{font-size:26px;font-weight:900;color:var(--brand-2);font-family:Georgia,serif}
+.stat .l{font-size:13px;color:var(--ink-3);margin-top:2px}
+
+/* 指南 */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.guide{padding:18px}
+.guide b{display:block;font-size:15px;margin-bottom:6px}
+.guide p{font-size:13.5px;color:var(--ink-2)}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);transition:.16s}
+.faq details[open]{border-color:#ffd0b0;background:#fffdfb}
+.faq summary{cursor:pointer;font-weight:700;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brand);font-weight:800;font-size:17px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:13.5px;color:var(--ink-2);margin-top:9px}
+
+/* 评论 */
+.cmt-head{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cmt-head span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--ink-3)}
+.cmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmt{padding:14px 16px}
+.cmt .who{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.cmt .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:12.5px;font-weight:800;flex:none}
+.cmt .who b{font-size:13.5px}
+.cmt .who time{margin-left:auto;font-size:12px;color:var(--ink-3)}
+.cmt p{font-size:13.5px;color:var(--ink-2)}
+.cmt .like{font-size:12px;color:var(--ink-3);margin-top:7px}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.news{padding:16px 17px;display:flex;flex-direction:column;gap:7px}
+.news time{font-size:12px;color:var(--brand-2);font-weight:600}
+.news h3{font-size:15px}
+.news p{font-size:13px;color:var(--ink-2);flex:1}
+
+/* 订阅 */
+.subscribe{background:linear-gradient(120deg,#12203a,#1d3153);border-radius:16px;padding:30px 32px;color:#e9f0fc;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.subscribe h2{font-size:21px;margin-bottom:6px}
+.subscribe p{color:#a9b9d4;font-size:14px}
+.subscribe .form{display:flex;gap:8px}
+.subscribe input{height:42px;border-radius:10px;border:1px solid #33456a;background:#0d182a;color:#eaf0fb;padding:0 14px;outline:none;min-width:220px}
+
+/* 页脚 */
+.site-foot{background:#0d1626;color:#9fb0c9;margin-top:10px;padding:36px 0 22px;font-size:13.5px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:24px;margin-bottom:22px}
+.site-foot h4{color:#e4ecf8;font-size:14.5px;margin-bottom:10px}
+.site-foot li{margin-bottom:7px}
+.site-foot a:hover{color:#ffb066}
+.foot-bot{border-top:1px solid #1c2a40;padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#7d8ea8}
+
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .quick{grid-template-columns:repeat(4,1fr)}
+  .grid-cards{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .guide-grid,.news-grid{grid-template-columns:repeat(2,1fr)}
+  .intro-points{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-main{display:none}
+}
+@media (max-width:680px){
+  .hero h1{font-size:25px}
+  .hero{padding:32px 0 30px}
+  .quick{grid-template-columns:repeat(4,1fr);margin-top:-18px}
+  .quick a{font-size:12px;padding:10px 4px}
+  .grid-cards,.cat-grid,.stats,.guide-grid,.news-grid,.faq,.cmt-grid,.update-list{grid-template-columns:1fr}
+  .article-box,.intro-card{padding:20px 18px}
+  .subscribe{padding:22px 18px}
+  .subscribe .form{width:100%}
+  .subscribe input{flex:1;min-width:0}
+  .sec{padding:28px 0}
+  .top-act .btn-ghost{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-top">
+  <div class="wrap top-inner">
+    <a class="logo" href="/#top"><span class="mark">虎</span>虎扑<em>NBA</em></a>
+    <nav class="nav-main">
+      <a href="/#hot">热门推荐</a>
+      <a href="/#update">最新动态</a>
+      <a href="/#cats">专区分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#stats">数据看板</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#news">专区资讯</a>
+      <a href="/#topic">话题投票</a>
+    </nav>
+    <div class="top-act">
+      <a class="btn btn-ghost" href="/#faq">新手指引</a>
+      <a class="btn btn-main" href="/#hot">进入专区</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>虎扑nba：把每场比赛的争论点看明白</h1>
+      <p class="lead">从虎扑nba专区的热帖出发，梳理比赛复盘、球员评价与球队走势，把散落在一页页回帖里的观点整理成可读的线索。</p>
+      <p class="lead">适合每天想快速了解NBA舆论风向、又不想在信息流里反复翻找的球迷。</p>
+      <form class="searchbar" onsubmit="return false;">
+        <input type="search" placeholder="搜索球员、球队、比赛日讨论，如：湖人 轮换 / 掘金 内线">
+        <button class="btn btn-main" type="submit">搜讨论</button>
+      </form>
+      <div class="hero-tags">
+        <a href="/#hot">今日热帖</a>
+        <a href="/#update">赛程动态</a>
+        <a href="/#deep">战术复盘</a>
+        <a href="/#cats">球队专区</a>
+        <a href="/#stats">数据观察</a>
+        <a href="/#faq">讨论礼仪</a>
+        <a href="/#news">专区资讯</a>
+        <a href="/#topic">球迷投票</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="hs-card"><span class="idx">01</span><div class="txt">今日最热：末节轮换争议<small>虎扑nba专区 · 讨论量居前</small></div></div>
+      <div class="hs-card"><span class="idx">02</span><div class="txt">球员评分：锋线表现分化<small>虎扑NBA社区 · 评分口径讨论</small></div></div>
+      <div class="hs-card"><span class="idx">03</span><div class="txt">赛程看点：背靠背考验<small>虎扑NBA论坛 · 赛前观察</small></div></div>
+      <div class="hs-card"><span class="idx">04</span><div class="txt">新秀观察：出场时间变化<small>虎扑NBA专区 · 长期追踪</small></div></div>
+    </aside>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="quick">
+    <a href="/#cats"><i>🏀</i>球队专区</a>
+    <a href="/#hot"><i>🔥</i>今日热帖</a>
+    <a href="/#update"><i>📅</i>赛程动态</a>
+    <a href="/#deep"><i>📊</i>战术复盘</a>
+    <a href="/#stats"><i>📈</i>数据观察</a>
+    <a href="/#faq"><i>❓</i>常见问题</a>
+    <a href="/#cmt"><i>💬</i>球迷评论</a>
+    <a href="/#news"><i>📰</i>专区资讯</a>
+  </div>
+</div>
+
+<!-- 简介 -->
+<section class="sec" id="intro">
+  <div class="wrap">
+    <div class="card intro-card">
+      <h2>虎扑nba专区是什么：一个把讨论串起来的入口</h2>
+      <p>很多球迷搜索“虎扑nba”，真正想找的往往不是一条新闻，而是<strong>一群人怎么看这场比赛</strong>。虎扑nba专区的价值就在于，它把赛后复盘、球员打分、轮换争议、交易流言和长期跟踪放在同一个讨论场里。有人贴数据，有人讲现场观感，也有人只留一句吐槽。信息密度高，但也因此容易散。</p>
+      <p>这个页面做的事情，是把虎扑NBA论坛里反复出现的话题重新组织：哪些讨论值得先看，哪些观点有分歧，哪些结论还需要更多比赛来验证。我们不做结论的搬运工，而是尽量把<strong>争论的结构</strong>摆出来，让你在进入虎扑NBA社区之前，先知道今天大家在吵什么。</p>
+      <p>适合三类人：每天刷一遍热帖的老球迷、只看关键比赛但想跟上舆论的轻度球迷、以及刚开始接触虎扑NBA专区、需要一份阅读顺序的新用户。页面本身会持续围绕赛程、球员表现和球队走势更新条目，收藏后隔几天回来看，能比较出话题的迁移轨迹。</p>
+      <div class="intro-points">
+        <div><b>话题聚合</b>按比赛日与球队整理</div>
+        <div><b>观点对照</b>正反两方都保留</div>
+        <div><b>阅读成本低</b>先看结论再看细节</div>
+        <div><b>可持续追</b>适合长期收藏</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 热门推荐 -->
+<section class="sec" id="hot">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba热门讨论推荐</h2>
+        <div class="sub">按今日讨论热度与争议度排序，点进去之前先看一句看点。</div>
+      </div>
+      <a class="more" href="/#update">查看最新动态 →</a>
+    </div>
+    <div class="grid-cards">
+
+      <article class="card rc">
+        <div class="cover c1"><span class="rate">9.2</span><span class="big">末节轮换之争</span></div>
+        <div class="body">
+          <h3>主力提前下场，是保护还是保守</h3>
+          <p>第三节领先两位数却被追平，争论集中在教练的换人时机。支持方认为体能分配合理，反对方指出防守强度断档明显。</p>
+          <div class="meta"><span class="tag hot">热帖</span><span class="tag">轮换</span><span class="tag blue">战术</span></div>
+          <div class="foot"><span>讨论 2.4k</span><span>更新于今日</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c2"><span class="rate">8.8</span><span class="big">锋线对位复盘</span></div>
+        <div class="body">
+          <h3>换防之后，错位到底吃到了谁</h3>
+          <p>把整场换防回合拆成三段看，会发现真正的失分点不在第一线，而在弱侧补位的半步迟疑。</p>
+          <div class="meta"><span class="tag blue">复盘</span><span class="tag">防守</span><span class="tag">对位</span></div>
+          <div class="foot"><span>讨论 1.7k</span><span>更新于今日</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c3"><span class="rate">8.5</span><span class="big">替补席的隐形贡献</span></div>
+        <div class="body">
+          <h3>数据不亮眼，但正负值说明问题</h3>
+          <p>替补后卫只拿6分，却把节奏稳住了。虎扑nba专区里关于“看不见的贡献”的讨论，这次终于有了具体样本。</p>
+          <div class="meta"><span class="tag green">数据</span><span class="tag">替补</span><span class="tag">节奏</span></div>
+          <div class="foot"><span>讨论 1.2k</span><span>更新于昨日</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c4"><span class="rate">9.0</span><span class="big">新秀观察笔记</span></div>
+        <div class="body">
+          <h3>出场时间涨了，但角色还没定</h3>
+          <p>连续四场出场超过20分钟，使用率却没有明显上升。他在虎扑NBA论坛被讨论最多的，是“该不该给更多持球”。</p>
+          <div class="meta"><span class="tag hot">新秀</span><span class="tag">成长</span><span class="tag blue">球权</span></div>
+          <div class="foot"><span>讨论 980</span><span>更新于昨日</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c5"><span class="rate">8.3</span><span class="big">交易流言辨析</span></div>
+        <div class="body">
+          <h3>哪些消息值得当真，哪些只是抬价</h3>
+          <p>把近一周的流言按来源可靠性排一排，会发现真正有操作空间的球队其实只有两三支。</p>
+          <div class="meta"><span class="tag">流言</span><span class="tag hot">交易</span><span class="tag">阵容</span></div>
+          <div class="foot"><span>讨论 2.1k</span><span>更新于3天前</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c6"><span class="rate">8.7</span><span class="big">关键球选择</span></div>
+        <div class="body">
+          <h3>最后一攻，该交给谁</h3>
+          <p>虎扑nba社区里两派观点都很硬：一派看命中率，一派看创造机会的能力。把最后两分钟逐回合拆开，答案没那么绝对。</p>
+          <div class="meta"><span class="tag blue">关键球</span><span class="tag">决策</span><span class="tag hot">争议</span></div>
+          <div class="foot"><span>讨论 1.9k</span><span>更新于3天前</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c7"><span class="rate">8.1</span><span class="big">背靠背体能账</span></div>
+        <div class="body">
+          <h3>第二场命中率下滑，是疲劳还是手感</h3>
+          <p>把本季背靠背第二场的出手分布拉出来对比，中距离比例明显上升，这通常意味着腿部力量不足。</p>
+          <div class="meta"><span class="tag green">体能</span><span class="tag">赛程</span><span class="tag">命中率</span></div>
+          <div class="foot"><span>讨论 760</span><span>更新于5天前</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c8"><span class="rate">8.9</span><span class="big">内线攻防样本</span></div>
+        <div class="body">
+          <h3>蹲坑还是上提，两种选择两种代价</h3>
+          <p>同一名中锋在两套防守策略下的失分效率差异明显，虎扑NBA专区的截图对比帖把这个差异讲得很直观。</p>
+          <div class="meta"><span class="tag blue">内线</span><span class="tag">策略</span><span class="tag hot">对比</span></div>
+          <div class="foot"><span>讨论 1.4k</span><span>更新于5天前</span></div>
+        </div>
+      </article>
+
+      <article class="card rc">
+        <div class="cover c9"><span class="rate">8.4</span><span class="big">更衣室氛围</span></div>
+        <div class="body">
+          <h3>连败之后，采访里的措辞变了</h3>
+          <p>不一定要有爆炸性发言，语气和用词的变化本身就值得读。虎扑nba论坛对这类细节的捕捉一向很快。</p>
+          <div class="meta"><span class="tag">氛围</span><span class="tag">采访</span><span class="tag">球队</span></div>
+          <div class="foot"><span>讨论 890</span><span>更新于6天前</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 最新动态 -->
+<section class="sec" id="update">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba最新动态速览</h2>
+        <div class="sub">以2026年11月7日为时间基准，整理专区里更新较快的条目方向。</div>
+      </div>
+      <a class="more" href="/#news">更多专区资讯 →</a>
+    </div>
+    <div class="card" style="padding:8px 24px;">
+      <div class="update-list">
+        <div class="up-item"><span class="dot"></span><div><div class="t">赛后复盘帖集中更新</div><div class="d">11月7日 · 多支球队末节轮换成为讨论焦点</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">球员评分页刷新</div><div class="d">11月7日 · 锋线与后卫评分分化明显</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">赛程前瞻上线</div><div class="d">11月7日 · 背靠背第二场体能话题升温</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">新秀追踪帖更新</div><div class="d">11月6日 · 出场时间与球权分配被反复讨论</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">交易流言汇总</div><div class="d">11月6日 · 来源可靠性成为讨论重点</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">战术截图分析</div><div class="d">11月5日 · 换防错位与弱侧补位被逐帧拆解</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">伤病名单变动</div><div class="d">11月5日 · 轮换深度因此调整</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">专栏长文发布</div><div class="d">11月4日 · 讨论“数据与观感谁更可信”</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">球迷投票结果公布</div><div class="d">11月4日 · 关键球人选投票参与量创新高</div></div></div>
+        <div class="up-item"><span class="dot"></span><div><div class="t">球队专区置顶更新</div><div class="d">11月3日 · 赛季目标讨论重新排序</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类 -->
+<section class="sec" id="cats">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba专区分类入口</h2>
+        <div class="sub">按阅读目的划分，而不是按信息流顺序划分。</div>
+      </div>
+    </div>
+    <div class="cat-grid">
+      <a class="card cat-item" href="/#hot"><span class="ic">战</span><div><b>赛后复盘</b><span>逐回合拆解比赛走势</span></div></a>
+      <a class="card cat-item" href="/#hot"><span class="ic">评</span><div><b>球员评分</b><span>表现与评分的差距</span></div></a>
+      <a class="card cat-item" href="/#deep"><span class="ic">术</span><div><b>战术观察</b><span>换防、挡拆与空间</span></div></a>
+      <a class="card cat-item" href="/#update"><span class="ic">程</span><div><b>赛程前瞻</b><span>对阵与体能账</span></div></a>
+      <a class="card cat-item" href="/#news"><span class="ic">讯</span><div><b>流言与动态</b><span>消息来源可靠性</span></div></a>
+      <a class="card cat-item" href="/#stats"><span class="ic">数</span><div><b>数据看板</b><span>效率值与正负值</span></div></a>
+      <a class="card cat-item" href="/#cmt"><span class="ic">聊</span><div><b>球迷讨论</b><span>观点碰撞与礼仪</span></div></a>
+      <a class="card cat-item" href="/#topic"><span class="ic">投</span><div><b>话题投票</b><span>关键球与赛季预期</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 深度解析 -->
+<section class="sec" id="deep">
+  <div class="wrap">
+    <div class="card article-box">
+      <h2>虎扑nba讨论为什么值得单独读一遍</h2>
+      <p>如果你只是想知道比分，任何一条推送都够了。但搜索“虎扑nba”的人，多半想要的是比分之外的东西：为什么这场赢了、为什么那个人被骂、为什么同一个回合会有两种完全相反的评价。虎扑nba专区最特别的地方，是它把<strong>观感</strong>和<strong>数据</strong>放在同一个台面上让人对质。有人拿高阶数据说话，有人坚持“我看球二十年”，两边都不完全错，讨论的价值就在于把各自的盲区暴露出来。</p>
+
+      <h3>一、赛后复盘的层次感</h3>
+      <p>一场比赛打完，最表层的是比分与命中率，往下一层是轮换与对位，再往下一层才是战术意图和体能分配。虎扑NBA论坛的高质量复盘帖通常不会停在第一层，而是会把“这段时间为什么突然打不动”拆成具体的回合。比如同样是三分不中，有的是出手选择差，有的是传导球到位但节奏被压，两者的结论完全不同。读这类帖子时，先看作者有没有<strong>给出具体的回合坐标</strong>，如果通篇只有情绪词，那更接近吐槽而不是分析。</p>
+
+      <h3>二、球员评价的两套语言</h3>
+      <p>虎扑nba社区里评价球员，长期存在两套语言体系。一套是数据语言：真实命中率、使用率、防守效率、正负值。另一套是观感语言：这球进不进、敢不敢投、关键时刻站不站得出来。两套语言各有道理，也各有偷懒的地方。数据语言容易忽略防守端的沟通与站位，观感语言则容易被几个高光回合带偏。比较稳妥的读法是，<span class="hl">先看数据确认趋势，再看观感补足细节</span>，两者冲突时，往往说明这名球员的角色正在变化。</p>
+      <div class="quote">一个实用判断：当虎扑NBA专区里同一个人被同时夸“效率高”和被骂“不敢打”时，通常不是谁看错了，而是他处在一个球权与责任不匹配的位置上。</div>
+
+      <h3>三、轮换争议背后的取舍</h3>
+      <p>轮换几乎是虎扑nba专区每天都会出现的话题。教练把主力提前换下，赢了叫保护，输了叫保守；把替补多留两分钟，赢了叫信任，输了叫固执。真正有信息量的讨论，会去问：这段时间球队在打什么？是要守住分差，还是要追节奏？如果目的是控制节奏，那换上防守型后卫就合理；如果目的是追分，那留一个不会投的空间点就值得质疑。把“换人对不对”换成“换人想解决什么问题”，争论会清楚很多。</p>
+
+      <h3>四、流言与消息源的辨别</h3>
+      <p>虎扑NBA论坛的资讯流转很快，但快不等于准。看流言时，可以按三个维度筛：消息源是否长期跟踪该球队、措辞是“已接触”还是“有意向”、以及有没有第二家独立来源。很多讨论之所以吵起来，是因为把“有意向”当成了“已达成”。虎扑nba专区里做得好的汇总帖，通常会把不同来源分级标注，这类帖子比单条爆料更值得读。</p>
+
+      <h3>五、适合什么样的阅读节奏</h3>
+      <p>轻度球迷可以只看热门推荐与最新动态，十分钟内掌握当天舆论方向。中度球迷建议加上深度解析与FAQ，把几个高频概念弄清楚。重度球迷则适合直接进虎扑NBA社区翻长帖，尤其是那些带截图与回合编号的复盘。无论哪种节奏，都不必追求“看完所有帖子”，<strong>挑两三条有分歧的讨论读透</strong>，比刷一百条短评更有收获。</p>
+
+      <h3>六、同类内容怎么比较</h3>
+      <p>和纯资讯站相比，虎扑nba的优势是观点密度高、更新快、有真实球迷语气；劣势是信息碎片化、情绪化内容占比不低。和纯数据站相比，它更贴近比赛观感，但数据的系统性弱一些。理想的使用方式是把两边接起来：先用数据站确认事实，再回虎扑NBA专区看大家怎么解释这些事实。这样既不会被情绪带走，也不会只剩干巴巴的数字。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 数据 -->
+<section class="sec" id="stats">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba专区的读与写</h2>
+        <div class="sub">模拟的讨论侧写，用来理解专区的活跃结构，不代表官方统计。</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="card stat"><div class="n">12</div><div class="l">常驻讨论板块</div></div>
+      <div class="card stat"><div class="n">2.4k</div><div class="l">单帖讨论峰值</div></div>
+      <div class="card stat"><div class="n">6</div><div class="l">高频争议话题</div></div>
+      <div class="card stat"><div class="n">30天</div><div class="l">评论取样区间</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 指南 -->
+<section class="sec" id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>阅读虎扑nba的体验指南</h2>
+        <div class="sub">不夸大功能，只讲这个页面能帮你省下什么。</div>
+      </div>
+    </div>
+    <div class="guide-grid">
+      <div class="card guide"><b>先看结构再看内容</b><p>页面把热门、动态、解析、问答分开，你可以按目的跳读，不必从头拉到尾。</p></div>
+      <div class="card guide"><b>分类按目的划分</b><p>复盘、评分、战术、流言各自独立，找某一类讨论时不用在时间线里翻。</p></div>
+      <div class="card guide"><b>移动端优先可读</b><p>卡片在窄屏会自动变成单列，正文行距与字号做了收敛，通勤路上读不费劲。</p></div>
+      <div class="card guide"><b>适合收藏追更</b><p>动态区按时间标注，隔几天回来能看出话题从哪场比赛迁移到了哪场比赛。</p></div>
+      <div class="card guide"><b>推荐能延伸路径</b><p>每张卡片的标签都可以当作下一跳的线索，从球员跳到战术，再跳到流言。</p></div>
+      <div class="card guide"><b>保留分歧而不是下结论</b><p>有争议的话题会同时呈现两种说法，方便你自己判断，而不是被单一口径带走。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba常见问题</h2>
+        <div class="sub">围绕阅读顺序、话题辨别与讨论方式整理。</div>
+      </div>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>第一次看虎扑nba专区，应该从哪读起？</summary>
+        <p>建议先看热门推荐，建立当天的话题地图，再挑一到两条深度解析读细节。如果你只想跟赛果，最新动态区足够；如果想理解争议，直接进复盘长帖。不要一开始就扎进评论区，容易只看到情绪最激烈的部分。</p>
+      </details>
+      <details>
+        <summary>虎扑NBA论坛里的观点可信吗？</summary>
+        <p>要分开看。带回合截图、带具体数据的帖子可信度较高；只有结论和情绪词的帖子更适合当气氛参考。看到“据说”“听说”这类措辞，先找原始来源。虎扑nba社区的优势是反应快，劣势也是快，慢一步核实往往更稳。</p>
+      </details>
+      <details>
+        <summary>球员评分和实际表现为什么经常不一致？</summary>
+        <p>评分带有情绪与预期差。一名高薪球员拿20分可能被评低分，因为大家期待的是30分；一名底薪球员拿12分可能被评高分，因为超出预期。读评分时，先看这名球员的角色定位，再看分数，才不会被数字误导。</p>
+      </details>
+      <details>
+        <summary>怎么判断一条交易流言值不值得跟？</summary>
+        <p>看三点：来源是否长期跟队、措辞是“接触”还是“达成”、有没有第二家独立媒体交叉。虎扑NBA专区里做得好的汇总帖会标注来源等级，跟着这类帖子看，比单条爆料省心得多。</p>
+      </details>
+      <details>
+        <summary>虎扑nba专区适合只看关键比赛的球迷吗？</summary>
+        <p>适合。你可以只读赛后复盘和最新动态两块，十分钟左右就能知道这场为什么赢、舆论在争什么。深度解析可以隔几天集中读一次，用来补概念，不必每场都跟。</p>
+      </details>
+      <details>
+        <summary>在虎扑NBA社区发言要注意什么？</summary>
+        <p>就事论事，尽量给出具体回合或数据作为依据；批评球员表现可以，避免人身攻击；对不确定的消息标注“存疑”。讨论氛围靠参与者维持，带证据的反对意见通常比情绪化附和更受欢迎。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 评论 -->
+<section class="sec" id="cmt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>球迷怎么说</h2>
+        <div class="sub">近30天内的讨论取样，语气尽量保留原样。</div>
+      </div>
+    </div>
+    <div class="cmt-head">
+      <span>全部</span><span>复盘分析</span><span>球员评价</span><span>轮换争议</span><span>流言讨论</span><span>新秀观察</span>
+    </div>
+    <div class="cmt-grid">
+      <div class="card cmt"><div class="who"><span class="av" style="background:#c2410c">北</span><b>北岸看台</b><time>11月7日</time></div><p>末节那段换人我回看了两遍，问题不在换谁，在于换上来的人不参与挡拆，进攻直接停了。</p><div class="like">👍 128 · 回复 16</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#1e3a8a">慢</span><b>慢热三分</b><time>11月7日</time></div><p>评分区今天有点过，赢球的一方也不是人人都打得好，替补那段其实被打了一波。</p><div class="like">👍 96 · 回复 9</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#065f46">老</span><b>老球皮阿德</b><time>11月6日</time></div><p>虎扑nba的复盘帖质量这两年确实上来了，带回合编号的帖子越来越多了，读起来省事。</p><div class="like">👍 210 · 回复 22</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#6d28d9">第</span><b>第四节替补</b><time>11月6日</time></div><p>不太同意楼上，截图只能证明一个回合，整场的防守沟通问题截图是看不出来的。</p><div class="like">👍 74 · 回复 31</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#9f1239">边</span><b>边线球专家</b><time>11月5日</time></div><p>关键球那题我选传球，不是不敢投，是包夹来得太快了，硬出手才是真的不理智。</p><div class="like">👍 156 · 回复 18</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#0f172a">夜</span><b>夜班看直播</b><time>11月5日</time></div><p>背靠背第二场是真的难，中距离比例一升就知道腿没劲了，这个观察挺准。</p><div class="like">👍 63 · 回复 7</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#155e75">数</span><b>数据不说谎</b><time>11月4日</time></div><p>正负值单看没意义，配合上场时段和对手阵容才有参考价值，虎扑NBA专区懂这个的人不少。</p><div class="like">👍 187 · 回复 14</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#78350f">新</span><b>新秀观察员</b><time>11月4日</time></div><p>那个新秀我看了四场，防守端站位进步很明显，进攻端确实还不敢做动作，慢慢来吧。</p><div class="like">👍 88 · 回复 11</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#3f1d5c">流</span><b>流言止于</b><time>11月3日</time></div><p>交易流言看个乐就行，真正有操作的球队就那么几支，其他都是抬价。</p><div class="like">👍 142 · 回复 26</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#134e4a">内</span><b>内线老派</b><time>11月3日</time></div><p>蹲坑还是上提这题，得看对面后卫的投射水平，一刀切地骂教练没意义。</p><div class="like">👍 79 · 回复 12</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#7c2d12">半</span><b>半场阵地</b><time>11月2日</time></div><p>这页面的分类挺实用的，我可以直接跳到战术那块，不用在时间线里翻了。</p><div class="like">👍 54 · 回复 5</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#1e293b">冷</span><b>冷板凳日记</b><time>11月2日</time></div><p>有些帖子标题很冲，点进去其实没内容，希望虎扑nba专区能多推点有干货的。</p><div class="like">👍 118 · 回复 20</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#b45309">录</span><b>录像分析师</b><time>11月1日</time></div><p>弱侧补位那半步确实是关键，很多失分第一眼看不出来，逐帧看就清楚了。</p><div class="like">👍 92 · 回复 8</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#0e7490">通</span><b>通勤看球</b><time>10月31日</time></div><p>每天地铁上刷十分钟最新动态，基本能跟上同事聊球，效率挺高。</p><div class="like">👍 66 · 回复 4</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#86198f">争</span><b>争冠窗口期</b><time>10月30日</time></div><p>更衣室那帖我持保留意见，采访措辞变化有很多原因，不一定就是内部有问题。</p><div class="like">👍 103 · 回复 17</div></div>
+      <div class="card cmt"><div class="who"><span class="av" style="background:#166534">老</span><b>老球迷不熬夜</b><time>10月29日</time></div><p>虎扑NBA论坛的老帖其实很值得翻，很多当年的判断现在回头看挺有意思。</p><div class="like">👍 131 · 回复 13</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 投票 -->
+<section class="sec" id="topic">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba话题投票</h2>
+        <div class="sub">专区里反复出现的两难选择，先投票再看讨论，立场会更清楚。</div>
+      </div>
+    </div>
+    <div class="grid-cards" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card guide"><b>最后一攻交给谁</b><p>命中率最高的射手，还是创造机会最强的持球点？两派在虎扑nba专区里长期拉锯。</p><div class="meta" style="margin-top:10px"><span class="tag hot">进行中</span><span class="tag">参与 3.1k</span></div></div>
+      <div class="card guide"><b>领先时该不该提前换下主力</b><p>保护体能还是保持强度，取决于你更怕哪种崩盘方式。</p><div class="meta" style="margin-top:10px"><span class="tag hot">进行中</span><span class="tag">参与 2.6k</span></div></div>
+      <div class="card guide"><b>数据与观感谁更可信</b><p>虎扑NBA社区的老问题，每次有争议比赛都会被重新提起。</p><div class="meta" style="margin-top:10px"><span class="tag">已结束</span><span class="tag">参与 4.2k</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 资讯 -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>虎扑nba专区资讯</h2>
+        <div class="sub">围绕讨论热度与阅读方式整理的动态条目。</div>
+      </div>
+    </div>
+    <div class="news-grid">
+      <article class="card news"><time>2026年11月7日</time><h3>赛后复盘帖集中出现，轮换话题占主导</h3><p>多场比赛末节换人时机被反复讨论，带回合截图的帖子阅读量明显高于纯观点帖。</p></article>
+      <article class="card news"><time>2026年11月6日</time><h3>球员评分页刷新，锋线评分分化</h3><p>同一场比赛里，防守贡献与得分贡献的权重差异，成为虎扑nba社区讨论的新切口。</p></article>
+      <article class="card news"><time>2026年11月5日</time><h3>战术截图分析走热，弱侧补位被逐帧拆解</h3><p>这类帖子门槛不高但信息密度大，适合想补防守概念的读者从零看起。</p></article>
+      <article class="card news"><time>2026年11月4日</time><h3>新秀追踪长帖更新，球权分配引讨论</h3><p>出场时间上升但使用率未变，虎扑NBA论坛围绕“该不该给更多持球”形成两派。</p></article>
+      <article class="card news"><time>2026年11月3日</time><h3>流言汇总帖强调来源分级</h3><p>把“接触”“有意向”“接近达成”分开标注，成为虎扑nba专区里较受欢迎的整理方式。</p></article>
+      <article class="card news"><time>2026年11月2日</time><h3>专栏长文讨论数据与观感的边界</h3><p>文章提出先确认事实再看解释的阅读顺序，评论区补充了不少实际案例。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="subscribe">
+      <div>
+        <h2>把虎扑nba专区加进你的每日阅读</h2>
+        <p>不推送、不打扰，只在你回来的时候，把话题的变化摆清楚。</p>
+      </div>
+      <form class="form" onsubmit="return false;">
+        <input type="email" placeholder="留下邮箱，接收专区更新提醒">
+        <button class="btn btn-main" type="submit">订阅</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>关于虎扑nba专区导航</h4>
+        <p style="color:#8fa1bd;font-size:13px">本页面为内容整理与阅读导航用途，聚合虎扑nba相关讨论方向与阅读线索，帮助球迷更快定位感兴趣的话题。页面观点不代表任何球队、平台或官方立场。</p>
+      </div>
+      <div>
+        <h4>快速入口</h4>
+        <ul>
+          <li><a href="/#hot">热门推荐</a></li>
+          <li><a href="/#update">最新动态</a></li>
+          <li><a href="/#cats">专区分类</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>阅读帮助</h4>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#cmt">球迷评论</a></li>
+          <li><a href="/#topic">话题投票</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>友情链接</h4>
+        <ul>
+          <li><a href="/#news">专区资讯</a></li>
+          <li><a href="/#stats">数据看板</a></li>
+          <li><a href="/#intro">专区简介</a></li>
+          <li><a href="/#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 虎扑nba专区导航 · 内容整理页</span>
+      <span>免责声明：页面所含讨论方向与评论为编辑整理与模拟呈现，仅供阅读参考。</span>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
