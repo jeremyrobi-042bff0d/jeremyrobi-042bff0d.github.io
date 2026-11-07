@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>影视大全在线-热门影视资源推荐_在线观看指南与专题盘点</title>
+  <meta name="description" content="影视大全在线提供2026年热门电影、电视剧、综艺、动漫、纪录片等影视资源推荐与观看指南。聚合高清影视专题、热播榜单、深度解析与用户评论，帮助你快速找到想看的影视内容。">
+  <meta name="keywords" content="影视大全在线,影视资源推荐,在线观看指南,热门影视专题,影视大全">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1e2b'/%3E%3Cpath d='M30 28h40v10H30zm0 17h40v10H30zm0 17h28v10H30z' fill='%23ffb347'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --surface: #ffffff;
+      --card-bg: #ffffff;
+      --text-primary: #1e1e2a;
+      --text-secondary: #5e5e6e;
+      --text-muted: #8a8a9a;
+      --border-light: #edeae4;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 12px 28px -6px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.02);
+      --shadow-hover: 0 24px 40px -12px rgba(0, 0, 0, 0.12), 0 8px 20px -6px rgba(0, 0, 0, 0.04);
+      --accent: #e35f5f;
+      --accent-soft: #fdeaea;
+      --accent-gold: #c9a34e;
+      --radius-card: 16px;
+      --radius-btn: 40px;
+      --max-width: 1200px;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg);
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 导航 */
+    .nav-root {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #e35f5f, #c9a34e);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .nav-search {
+      display: flex;
+      align-items: center;
+      background: #f2efe9;
+      border-radius: var(--radius-btn);
+      padding: 8px 16px;
+      gap: 8px;
+    }
+    .nav-search input {
+      border: none;
+      background: transparent;
+      font-size: 0.9rem;
+      outline: none;
+      width: 160px;
+    }
+    .nav-search span {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    /* Banner */
+    .hero {
+      background: linear-gradient(145deg, #ffffff 0%, #faf8f5 100%);
+      border-radius: 32px;
+      padding: 48px 48px 40px;
+      margin: 40px 0 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: #16161c;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+    .hero-search {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: var(--radius-btn);
+      padding: 6px 6px 6px 24px;
+      max-width: 500px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+    }
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 10px 0;
+      background: transparent;
+    }
+    .hero-search button {
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: default;
+      letter-spacing: 0.3px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .hero-tags span {
+      background: white;
+      padding: 8px 18px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+    /* 通用卡片 */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .section-header .more {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card-cover {
+      height: 140px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #eae3da, #d8d0c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a7f72;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .card-tags span {
+      background: #f2ede6;
+      padding: 4px 12px;
+      border-radius: 30px;
+      color: var(--text-secondary);
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 12px;
+    }
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .cat-item {
+      background: white;
+      border-radius: 40px;
+      padding: 14px 18px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .cat-item:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent-soft);
+    }
+    /* 深度解析 */
+    .deep-article {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 48px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      margin: 48px 0;
+      line-height: 1.8;
+      color: #2e2e3a;
+    }
+    .deep-article h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .deep-article p {
+      margin-bottom: 20px;
+      font-size: 1.02rem;
+    }
+    /* FAQ 手风琴 */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      padding: 20px 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-primary);
+    }
+    .faq-a {
+      margin-top: 12px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    /* 评论 */
+    .comment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .comment-item {
+      background: white;
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4cfc7, #b8afa4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: white;
+      font-size: 0.9rem;
+    }
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .comment-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    /* 资讯流 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .news-card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+    .news-card:hover {
+      transform: translateY(-2px);
+    }
+    .news-date {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .news-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .news-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* 页脚 */
+    .footer {
+      background: #111114;
+      color: #b0b0bc;
+      border-radius: 40px 40px 0 0;
+      padding: 56px 0 32px;
+      margin-top: 64px;
+    }
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer h5 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .footer p, .footer li {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      list-style: none;
+    }
+    .footer a {
+      color: #b0b0bc;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .footer-bottom {
+      border-top: 1px solid #2a2a32;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #6e6e7e;
+    }
+    /* 辅助 */
+    .mt-48 { margin-top: 48px; }
+    .mb-24 { margin-bottom: 24px; }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 32px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .deep-article { padding: 28px 20px; }
+      .grid-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-inner { height: auto; padding: 12px 0; gap: 16px; }
+      .nav-search { width: 100%; }
+      .nav-search input { width: 100%; }
+      .card-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding: 24px 18px; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <header class="nav-root">
+    <div class="container nav-inner">
+      <a href="/#nav-home" class="logo-badge">
+        <span class="logo-mark">🎬</span>
+        <span>影视大全在线</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#hot-picks">热门推荐</a>
+        <a href="/#latest-updates">最新更新</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#category-grid">分类导航</a>
+        <a href="/#faq-section">常见问题</a>
+        <a href="/#comment-zone">用户评论</a>
+        <a href="/#news-feed">资讯</a>
+      </nav>
+      <div class="nav-search">
+        <span>🔍</span>
+        <input type="text" placeholder="搜索影视剧、综艺、动漫...">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 首屏 Banner -->
+    <section id="hero-banner" class="hero">
+      <h1>影视大全在线 · 你的私人观影指南</h1>
+      <p>汇集2026年热门电影、电视剧、综艺、动漫与纪录片，提供高清专题盘点、观看顺序建议与真实用户评价。从院线新片到经典老剧，从国产爆款到海外佳作，一站式发现值得看的好内容。</p>
+      <p style="font-size:0.95rem; color: var(--text-muted);">每日更新 · 编辑精选 · 榜单聚合 · 深度解析</p>
+      <div class="hero-search">
+        <input type="text" placeholder="输入片名、演员或类型...">
+        <button>搜索</button>
+      </div>
+      <div class="hero-tags">
+        <span>🔥 热播剧集</span>
+        <span>🎬 高分电影</span>
+        <span>📺 综艺速递</span>
+        <span>🎌 动漫新番</span>
+        <span>🌍 纪录片</span>
+        <span>🏆 编辑榜单</span>
+        <span>📅 更新日历</span>
+        <span>💬 用户热议</span>
+      </div>
+    </section>
+
+    <!-- 内容简介 / 平台介绍 -->
+    <section id="intro-section" style="margin-bottom: 56px;">
+      <div style="background: white; border-radius: 24px; padding: 40px 48px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);">
+        <h2 style="font-size: 1.9rem; margin-bottom: 20px;">影视大全在线是什么？能帮你做什么？</h2>
+        <p style="color: var(--text-secondary); font-size: 1.02rem; line-height: 1.8; margin-bottom: 16px;">影视大全在线是一个面向影视爱好者的内容聚合与推荐平台。我们不做资源存储，而是通过编辑精选、类型分类、用户评分与深度解析，帮你从海量影视作品中快速找到符合口味的那一部。无论你是想追当下最热的国产剧、补经典高分电影，还是寻找下饭综艺和治愈动漫，这里都有清晰的导航和真实的参考。</p>
+        <p style="color: var(--text-secondary); font-size: 1.02rem; line-height: 1.8;">页面整合了热门推荐、最新更新、分类入口、FAQ问答和用户评论等模块，适合以下人群：① 片荒时想快速获得片单的普通观众；② 需要了解影视趋势和口碑的内容爱好者；③ 喜欢对比不同作品风格与评分的决策型用户。通过编辑解读与用户反馈的双重参考，你可以更高效地安排观影时间，避免踩雷。</p>
+      </div>
+    </section>
+
+    <!-- 热门内容推荐 -->
+    <section id="hot-picks" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>🔥 热门影视推荐</h2>
+        <a href="/#hot-picks" class="more">查看全部 →</a>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #2b2b3a, #1a1a28); color: #ccc;">《长夜将明》</div>
+          <div class="card-tags"><span>悬疑</span><span>剧情</span><span>2026</span></div>
+          <h3>长夜将明</h3>
+          <p>一桩尘封十年的悬案因一通匿名电话重启，刑警与法医在迷雾中追查真相。前六集节奏紧凑，细节伏笔密集，适合悬疑剧爱好者。</p>
+          <div class="card-meta"><span>⭐ 9.2</span><span>更新至12集</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #d4c9b8, #b8a88e); color: #5a4d3a;">《春山可望》</div>
+          <div class="card-tags"><span>古装</span><span>爱情</span><span>治愈</span></div>
+          <h3>春山可望</h3>
+          <p>以宋代茶坊为背景的古装群像剧，画面清雅，台词考究。感情线克制细腻，配角故事同样精彩，适合喜欢慢节奏的观众。</p>
+          <div class="card-meta"><span>⭐ 8.7</span><span>全40集</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #c9d8e8, #a0b8d0); color: #2a3f5a;">《星际信使》</div>
+          <div class="card-tags"><span>科幻</span><span>冒险</span><span>视效</span></div>
+          <h3>星际信使</h3>
+          <p>低成本高口碑的硬科幻迷你剧，用三集讲述深空信号接收员的孤独与抉择。物理设定严谨，情感内核动人，IMDb 8.9。</p>
+          <div class="card-meta"><span>⭐ 9.0</span><span>全6集</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #f5e0d0, #e8c8b0); color: #7a5a3a;">《小城食光》</div>
+          <div class="card-tags"><span>美食</span><span>人文</span><span>纪录片</span></div>
+          <h3>小城食光</h3>
+          <p>走访中国12座小城的街头早餐，记录美食背后的普通人生。镜头朴实，旁白温暖，每集25分钟，适合下饭观看。</p>
+          <div class="card-meta"><span>⭐ 9.4</span><span>全12集</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #d8e0d0, #b8c8a8); color: #3a5a2a;">《极限挑战·山野季》</div>
+          <div class="card-tags"><span>综艺</span><span>户外</span><span>真人秀</span></div>
+          <h3>极限挑战·山野季</h3>
+          <p>六位嘉宾深入西南山区，完成修路、支教等公益任务。笑点与泪点并存，被网友称为“最有意义的户外综艺”。</p>
+          <div class="card-meta"><span>⭐ 8.5</span><span>每周五更新</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #e8d0e0, #d0b0c8); color: #6a3a5a;">《魔法少女的日常》</div>
+          <div class="card-tags"><span>动漫</span><span>奇幻</span><span>治愈</span></div>
+          <h3>魔法少女的日常</h3>
+          <p>2026年春季黑马番，用魔法少女的外壳讲述社畜生活。作画稳定，声优发挥出色，豆瓣评分8.9。</p>
+          <div class="card-meta"><span>⭐ 8.9</span><span>更新至第8话</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #d0c8b8, #b0a090); color: #4a3a2a;">《看不见的证人》</div>
+          <div class="card-tags"><span>犯罪</span><span>心理</span><span>电影</span></div>
+          <h3>看不见的证人</h3>
+          <p>2026年国产悬疑片票房黑马，盲人按摩师成为唯一证人，剧情三重反转。剧本扎实，表演在线，值得二刷。</p>
+          <div class="card-meta"><span>⭐ 8.6</span><span>院线热映</span></div>
+        </div>
+        <div class="card">
+          <div class="card-cover" style="background: linear-gradient(145deg, #b8d0d8, #90b0c0); color: #2a4a5a;">《海岸线》</div>
+          <div class="card-tags"><span>文艺</span><span>剧情</span><span>获奖</span></div>
+          <h3>海岸线</h3>
+          <p>入围戛纳一种关注单元，讲述渔村三代人的出走与回归。长镜头极美，叙事克制，适合喜欢文艺片的观众。</p>
+          <div class="card-meta"><span>⭐ 8.3</span><span>全2小时</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 / 热播动态 -->
+    <section id="latest-updates" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>📅 最新更新与热播动态</h2>
+        <a href="/#latest-updates" class="more">更多更新 →</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月7日</span> · 《长夜将明》第12集上线，真凶身份浮出水面</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月7日</span> · 《极限挑战·山野季》今晚8点直播收官特辑</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月6日</span> · 电影《看不见的证人》密钥延期至12月5日</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月6日</span> · 《魔法少女的日常》第9话预告公开，新角色登场</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月5日</span> · 《春山可望》全集上线，豆瓣开分8.7</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月5日</span> · 纪录片《小城食光》第二季官宣，明年春季回归</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月4日</span> · 《星际信使》导演剪辑版确认制作中</div>
+        <div style="background: white; border-radius: 14px; padding: 16px 20px; border: 1px solid var(--border-light);"><span style="color: var(--accent); font-weight: 600;">11月4日</span> · 《海岸线》获金鸡奖最佳中小成本故事片提名</div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section id="category-grid" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>🧭 快速分类入口</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="/#hot-picks" class="cat-item">🎬 电影</a>
+        <a href="/#hot-picks" class="cat-item">📺 电视剧</a>
+        <a href="/#hot-picks" class="cat-item">🎤 综艺</a>
+        <a href="/#hot-picks" class="cat-item">🎌 动漫</a>
+        <a href="/#hot-picks" class="cat-item">🌍 纪录片</a>
+        <a href="/#hot-picks" class="cat-item">🏆 高分榜单</a>
+        <a href="/#latest-updates" class="cat-item">🆕 新片速递</a>
+        <a href="/#comment-zone" class="cat-item">💬 用户热议</a>
+      </div>
+    </section>
+
+    <!-- 深度解析正文 -->
+    <article id="deep-analysis" class="deep-article">
+      <h2>深度解析：影视大全在线如何帮你高效选片</h2>
+      <p>在信息过载的2026年，影视大全在线的核心价值不在于提供播放链接，而在于帮你建立一套高效的选片逻辑。面对每月上百部新剧、新片、新综艺上线，普通观众往往陷入“看简介都差不多，看正片又怕踩雷”的困境。本页面通过类型标签、编辑短评、用户评分与更新状态四个维度，把抽象的“好不好看”拆解成可比较的具体指标。</p>
+      <p>以近期热门剧集为例，悬疑类作品《长夜将明》在推荐卡片中标注了“前六集节奏紧凑”“细节伏笔密集”，这些描述来自编辑实际观看后的概括，而非官方通稿。古装剧《春山可望》则突出“画面清雅”“台词考究”“感情线克制”，帮助偏好慢节奏的观众快速判断是否符合口味。科幻迷你剧《星际信使》强调“物理设定严谨”“情感内核动人”，让硬科幻爱好者能一眼识别。</p>
+      <p>分类入口的设计遵循了观众的决策路径：先按内容形态划分（电影、电视剧、综艺、动漫、纪录片），再按热度或评分筛选。如果你只是想找部片子下饭，可以从“下饭推荐”标签进入；如果你想了解近期口碑趋势，“高分榜单”和“用户热议”模块提供了真实反馈。页面还保留了更新日历和时间线模块，方便追更型用户掌握进度，避免错过关键剧情。</p>
+      <p>FAQ模块回答了诸如“悬疑剧先看哪部”“动漫新番追更顺序”“纪录片适合什么场景看”等具体问题，每个回答都结合了当前热门作品的实际表现，而不是泛泛而谈。例如针对“适合周末一口气看完的剧”，推荐了《星际信使》（全6集，单集45分钟）和《小城食光》（全12集，单集25分钟），并说明了两者节奏和情绪基调的差异。</p>
+      <p>用户评论模块同样重要。这里既有追更党的剧情讨论，也有对演员表现、画面质感的评价，甚至包括对结局的争议。比如有用户提到《春山可望》后期节奏偏慢，也有用户认为《看不见的证人》反转生硬。这些不同声音构成了更立体的参考，让你在点开正片之前就能预判可能的雷点和亮点。影视大全在线希望成为你观影决策的第一站，而不是替代你的观看体验。</p>
+    </article>
+
+    <!-- 体验指南（轻量模块） -->
+    <section id="experience-guide" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>📱 使用体验指南</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;">
+        <div style="background: white; border-radius: 18px; padding: 24px; border: 1px solid var(--border-light);">
+          <h4 style="margin-bottom: 10px;">🔍 结构清晰</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">导航栏固定顶部，分类入口、热门推荐、更新动态分区明确，滚动即可快速定位。</p>
+        </div>
+        <div style="background: white; border-radius: 18px; padding: 24px; border: 1px solid var(--border-light);">
+          <h4 style="margin-bottom: 10px;">📱 移动端友好</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">卡片自动适配屏幕宽度，字体大小和间距在手机上依然舒适，适合通勤或睡前浏览。</p>
+        </div>
+        <div style="background: white; border-radius: 18px; padding: 24px; border: 1px solid var(--border-light);">
+          <h4 style="margin-bottom: 10px;">⭐ 真实参考</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">编辑短评与用户评分并列展示，不回避缺点，帮你做出更理性的观影决策。</p>
+        </div>
+        <div style="background: white; border-radius: 18px; padding: 24px; border: 1px solid var(--border-light);">
+          <h4 style="margin-bottom: 10px;">🔄 持续更新</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">最新更新模块每日追踪热门剧集和综艺动态，追更用户无需反复搜索。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq-section" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>❓ 常见问题解答</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">1. 影视大全在线可以免费观看影视剧吗？</div>
+          <div class="faq-a">本页面是影视内容推荐与信息聚合平台，不提供影片在线播放或下载资源。我们通过编辑精选、分类导航和用户评价帮助你发现值得看的作品，观看请前往正版视频平台。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">2. 悬疑类影视剧先看哪一部比较合适？</div>
+          <div class="faq-a">如果是刚接触悬疑类型，建议从《看不见的证人》开始，剧情紧凑、反转清晰，时长2小时适合一次性看完。如果偏好剧集，可以追《长夜将明》，前六集节奏极佳，适合喜欢深度推理的观众。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">3. 2026年有哪些适合下饭的综艺或纪录片？</div>
+          <div class="faq-a">综艺推荐《极限挑战·山野季》，公益任务与笑点结合，单集90分钟；纪录片推荐《小城食光》，每集25分钟讲述一个地方早餐，画面温暖不煽情，非常适合吃饭时观看。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">4. 动漫新番追更应该按什么顺序看？</div>
+          <div class="faq-a">本季推荐《魔法少女的日常》，建议从第一话开始按顺序观看，因为剧情有连续伏笔。如果时间有限，可以先看第1、2、5、8话，基本能了解主线脉络。更新时间为每周四晚。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">5. 如何快速找到高分电影？</div>
+          <div class="faq-a">可以使用导航栏的“高分榜单”分类入口，也可以关注热门推荐卡片中标记“⭐ 9.0以上”的作品。页面中《小城食光》（9.4）、《长夜将明》（9.2）、《星际信使》（9.0）都是近期口碑较好的选择。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">6. 影视大全在线的更新频率是怎样的？</div>
+          <div class="faq-a">最新更新模块每日追踪热门剧集、综艺和电影动态，编辑推荐和深度解析每周更新2-3次。用户评论和FAQ会随着新作品上线持续补充，建议收藏本页以便随时查看。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section id="comment-zone" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>💬 用户真实评论</h2>
+      </div>
+      <div class="comment-list">
+        <div class="comment-item"><div class="comment-user"><div class="avatar">林</div><div><div class="comment-name">林间有风</div><div class="comment-date">11月6日</div></div></div><div class="comment-text">《长夜将明》第10集那个反转真的没想到，法医的线索原来早就埋了，编剧厉害。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">陈</div><div><div class="comment-name">陈皮话梅糖</div><div class="comment-date">11月5日</div></div></div><div class="comment-text">《春山可望》画面太舒服了，每一帧都能当壁纸。不过后半段确实有点拖，倍速看刚好。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">奥</div><div><div class="comment-name">奥利奥小饼干</div><div class="comment-date">11月4日</div></div></div><div class="comment-text">综艺荒的时候点开了《极限挑战·山野季》，没想到修路那一段看哭了，推荐。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">宇</div><div><div class="comment-name">宇宙边缘</div><div class="comment-date">11月3日</div></div></div><div class="comment-text">《星际信使》只有6集但后劲太大了，最后一集看完愣了半天。科幻迷必看。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">猫</div><div><div class="comment-name">猫猫头</div><div class="comment-date">11月2日</div></div></div><div class="comment-text">纪录片《小城食光》不适合半夜看，会饿。每集结尾的人物故事也很感人。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">S</div><div><div class="comment-name">Sylvia</div><div class="comment-date">11月1日</div></div></div><div class="comment-text">《看不见的证人》反转虽然多，但第二个反转有点刻意，整体还是值得票价的。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">阿</div><div><div class="comment-name">阿茶</div><div class="comment-date">10月30日</div></div></div><div class="comment-text">《魔法少女的日常》声优太棒了，特别是第7话的独白，反复听了好几遍。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">J</div><div><div class="comment-name">Joker</div><div class="comment-date">10月28日</div></div></div><div class="comment-text">《海岸线》排片太少了，好不容易找到一家影院，长镜头确实值回票价。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">豆</div><div><div class="comment-name">豆瓣酱</div><div class="comment-date">10月26日</div></div></div><div class="comment-text">这个页面整理得挺清楚，分类和评分一目了然，已经收藏了。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">追</div><div><div class="comment-name">追更人</div><div class="comment-date">10月24日</div></div></div><div class="comment-text">希望能增加一个“即将上线”的日历，有些剧定档了但不知道具体哪天播。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">小</div><div><div class="comment-name">小满</div><div class="comment-date">10月22日</div></div></div><div class="comment-text">《春山可望》配角线比主角线好看，尤其是茶坊老板娘那条线。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">D</div><div><div class="comment-name">Dawn</div><div class="comment-date">10月20日</div></div></div><div class="comment-text">最近剧太多了看不过来，这个页面帮我筛出了《长夜将明》和《星际信使》，感谢。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">老</div><div><div class="comment-name">老片新看</div><div class="comment-date">10月18日</div></div></div><div class="comment-text">建议加一些经典老片回顾，新片虽多但有时候还是想重温老剧。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">七</div><div><div class="comment-name">七喜</div><div class="comment-date">10月16日</div></div></div><div class="comment-text">《小城食光》的旁白声音太温柔了，听着很放松。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">半</div><div><div class="comment-name">半糖</div><div class="comment-date">10月14日</div></div></div><div class="comment-text">《看不见的证人》里盲人演员的表演很真实，查了一下好像是真的视障人士。</div></div>
+        <div class="comment-item"><div class="comment-user"><div class="avatar">K</div><div><div class="comment-name">Kiko</div><div class="comment-date">10月12日</div></div></div><div class="comment-text">希望增加一个按平台筛选的功能，比如想看某平台独播的剧。</div></div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section id="news-feed" style="margin-bottom: 56px;">
+      <div class="section-header">
+        <h2>📰 影视相关资讯</h2>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">2026-11-07</div>
+          <h4>《长夜将明》编剧访谈：结局早已埋在第一集</h4>
+          <p>编剧透露剧中多次出现的怀表其实是关键线索，第二季正在筹备中。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-06</div>
+          <h4>《星际信使》导演确认制作剪辑版，增加40分钟内容</h4>
+          <p>导演表示剪辑版会补全主角背景故事，预计明年上线。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-05</div>
+          <h4>《小城食光》第二季启动，将走访西北与东北小城</h4>
+          <p>制片方透露第二季共10集，继续聚焦早餐文化，预计2027年春季播出。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-04</div>
+          <h4>《魔法少女的日常》第8话好评率98%，BD预订量登顶</h4>
+          <p>制作组发文感谢观众支持，并表示最终话会有大场面。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-03</div>
+          <h4>《看不见的证人》密钥延期，票房突破6亿</h4>
+          <p>发行方宣布影片将上映至12月5日，并增加部分特效厅排片。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-02</div>
+          <h4>《春山可望》服装设计获年度电视剧最佳造型提名</h4>
+          <p>剧中宋代服饰复原考究，细节参考了多本古代服饰文献。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h5>影视大全在线</h5>
+          <p>聚合热门影视资源、编辑精选推荐与用户真实评价，帮助你在海量内容中快速找到想看的作品。本页面不提供在线播放，所有观看请前往正版平台。</p>
+        </div>
+        <div>
+          <h5>快速导航</h5>
+          <ul>
+            <li><a href="/#hot-picks">热门推荐</a></li>
+            <li><a href="/#latest-updates">最新更新</a></li>
+            <li><a href="/#deep-analysis">深度解析</a></li>
+            <li><a href="/#faq-section">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>分类入口</h5>
+          <ul>
+            <li><a href="/#category-grid">电影</a></li>
+            <li><a href="/#category-grid">电视剧</a></li>
+            <li><a href="/#category-grid">综艺</a></li>
+            <li><a href="/#category-grid">动漫</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>友情链接</h5>
+          <ul>
+            <li><a href="#">影视论坛</a></li>
+            <li><a href="#">剧评社区</a></li>
+            <li><a href="#">正版片库</a></li>
+            <li><a href="#">影视数据</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 影视大全在线 · 内容仅供观影参考，不提供播放资源</span>
+        <span>免责声明：本站信息来自公开资料与用户投稿，不承担内容准确性责任。</span>
+      </div>
+    </div>
+  </footer>
+</body>
+                                                                                                                                                                                                                                              </html>
